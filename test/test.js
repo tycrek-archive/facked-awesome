@@ -1,6 +1,8 @@
 const { facked } = require('../');
 const express = require('express');
 const axios = require('axios');
+const path = require('path');
+const fs = require('fs');
 
 const app = express();
 
@@ -9,7 +11,7 @@ app.set('view engine', 'pug');
 app.set('views', './test/');
 
 // Facked middleware
-app.use('/facked.js', facked('abcde12345', false));
+app.use('/facked.js', facked(fs.readFileSync(path.join(process.cwd(), 'kit_id')).toString(), false));
 
 // Index
 app.get('/', (req, res) => res.render('index'));
