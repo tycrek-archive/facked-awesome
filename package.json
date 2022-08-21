@@ -1,6 +1,6 @@
 {
   "name": "@tycrek/facked-awesome",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Font Awesome interceptor middlware thing",
   "main": "dist/facked.js",
   "engines": {
